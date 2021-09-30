@@ -6,6 +6,10 @@ export interface SnowflakeQuery extends DataQuery {
   timeColumns?: string[];
 }
 
+export interface SnowflakeVariableQuery {
+  queryText: string;
+}
+
 export const defaultQuery: Partial<SnowflakeQuery> = {
   queryText:
     'SELECT $__timeGroup(timestamp,$__interval ,previous) as time, count(*) as nb \n' +
